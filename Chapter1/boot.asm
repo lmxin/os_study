@@ -1,3 +1,5 @@
+; nasm boot.asm -o boot.bin
+; ndisasmw -o 0x7c00 boot.bin > disboot.asm     
     org     07c00h
     mov     ax, cs
     mov     ds, ax
@@ -10,7 +12,7 @@ DispStr:
     mov     cx, 16
     mov     ax, 01301h
     mov     bx, 000ch
-    mov     dl. 0
+    mov     dl, 0
     int     10h
     ret  
 BootMessage:    
