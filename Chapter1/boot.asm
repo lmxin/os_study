@@ -1,5 +1,8 @@
-org     07c00h
-mov     ax,cs
-mov     ds,ax
-mov     es,ax
-call        
+    org     07c00h
+    mov     ax,cs
+    mov     ds,ax
+    mov     es,ax
+    call      DispStr
+    jmp      $
+DispStr:
+    
