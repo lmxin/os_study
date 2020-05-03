@@ -2,7 +2,18 @@
     mov     ax,cs
     mov     ds,ax
     mov     es,ax
-    call      DispStr
-    jmp      $
+    call    DispStr
+    jmp     $
 DispStr:
+    mov     ax,BootMessage
+    mov     bp,ax
+
+
+
+
+
+
+
+
+
     
