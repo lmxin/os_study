@@ -1,7 +1,8 @@
 ; nasm boot.asm -o boot.bin
 ; ndisasm -o 0x7c00 boot.bin > disboot.asm     
-; bximage -q -mode=create -fd=1.44M a.img
+; cp ../a.img .
 ; dd if=boot.bin of=a.img bs=512 count=1 conv=notrunc
+; bochs -q -f bochsrc
     org     07c00h
     mov     ax, cs
     mov     ds, ax
