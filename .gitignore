@@ -1,3 +1,4 @@
 Chapter1/disboot.asm
-Chapter1/boot.bin
-Chapter1/a.img
+Chapter*/*.bin
+Chapter*/*.img
+*.img

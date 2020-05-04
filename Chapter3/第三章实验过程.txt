@@ -1,0 +1,13 @@
+用到的主要实验命令为
+nasm pmtest1.asm -o pmtest1.bin
+然后把第一章的a.img复制过来(因为它的结尾两个字节时0xaa55)
+dd if=pmtest1.bin of=a.img bs=512 count=1 conv=notrunc
+bochs -q -f bochsrc
+其中bochsrc为第一章的bochsrc
+
+开始时用的是空白的a.img,
+运行时提示
+No bootable device
+参照
+https://blog.csdn.net/xiaominthere/article/details/16952505
+里的办法得到解决

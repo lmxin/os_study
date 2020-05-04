@@ -1,0 +1,13 @@
+用到的主要实验命令为
+nasm boot.asm -o boot.bin
+ndisasm -o 0x7c00 boot.bin > disboot.asm     
+bximage -q -mode=create -fd=1.44M a.img
+dd if=boot.bin of=a.img bs=512 count=1 conv=notrunc
+bochs -q -f bochsrc
+其中bochsrc的内容和原书有修改
+此外新版bochs不支持dump_cpu命令,
+需要改用info_cpu命令.
+
+本章生成的a.img可以作为后面各章的模板,
+因为结尾为0xaa55.
+
