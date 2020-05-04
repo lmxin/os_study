@@ -1,7 +1,8 @@
 用到的主要实验命令为
 nasm pmtest1.asm -o pmtest1.bin
-然后把第一章的a.img复制过来(因为它的结尾两个字节时0xaa55)
+然后把第零章的a.img复制过来(因为它的结尾两个字节时0xaa55)
 dd if=pmtest1.bin of=a.img bs=512 count=1 conv=notrunc
+cp ../bochsrc .
 bochs -q -f bochsrc
 其中bochsrc为第一章的bochsrc
 

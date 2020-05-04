@@ -1,9 +1,10 @@
 ; ==========================================
 ; pmtest1.asm
-; 编译方法：nasm pmtest1.asm -o pmtest1.bin
-; cp -f ../a.img .
-; cp -f ../bochsrc .
+; 主要实验命令
+; nasm pmtest1.asm -o pmtest1.bin
+; cp ../a.img .
 ; dd if=pmtest1.bin of=a.img bs=512 count=1 conv=notrunc
+; cp ../bochsrc .
 ; bochs -q -f bochsrc
 ; ==========================================
 

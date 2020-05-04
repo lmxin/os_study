@@ -2,6 +2,7 @@
 ; ndisasm -o 0x7c00 boot.bin > disboot.asm     
 ; cp ../a.img .
 ; dd if=boot.bin of=a.img bs=512 count=1 conv=notrunc
+; cp ../bochsrc .
 ; bochs -q -f bochsrc
     org     07c00h
     mov     ax, cs
