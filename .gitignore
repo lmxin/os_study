@@ -2,3 +2,6 @@ Chapter1/disboot.asm
 Chapter*/*.bin
 Chapter*/*.img
 *.img
+Chapter3/pmtest1b/freedos-img.tar.gz
+Chapter3/pmtest1b/freedos-img/*.*
+Chapter3/pmtest1b/pmtest1.com

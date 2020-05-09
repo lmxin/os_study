@@ -1,0 +1,50 @@
+https://blog.csdn.net/weixin_34008805/article/details/92996802
+1.把原书代码光盘中的
+/chapter3/a目录下的
+pm.inc  pmtest1b.asm
+复制到本目录下,
+以及
+/chapter3/b目录下的bochsrc
+复制到本目录下.
+
+然后修改bochsrc的显存文件,修改后的内容为
+
+romimage: file=/usr/local/share/bochs/BIOS-bochs-latest
+vgaromimage: file=/usr/local/share/bochs/VGABIOS-lgpl-latest
+
+2.下载freedosimg,
+执行 tar vxzf   FreeDos.img.tar.gz 进行解压
+然后 cp freedos-img/a.img ./freedos.img
+
+3.建立一个空的pm.img.
+4.修改bochsrc文件,增加下面几行:
+	floppya: 1_44="freedos.img", status=inserted
+    floppyb: 1_44="pm.img", status=inserted
+    boot: a
+
+5.启动bochs
+bochs -f bochsrc
+选择6,然后输入c.
+
+6.在freedos虚拟机中输入
+format b:
+把b盘格式化
+
+7.在linux终端中执行
+nasm pmtest1b.asm -o pmtest1.com
+sudo mkdir /mnt/floppy 
+sudo mount -o loop pm.img /mnt/floppy/
+sudo cp pmtest1.com /mnt/floppy/
+sudo umount /mnt/floppy/
+
+8.重新启动freedos,
+执行
+B:  #进入B盘盘符
+pmtest1.com 此时会在屏幕上输出一个红色的字母P
+说明实验成功
+
+
+
+
+
+
